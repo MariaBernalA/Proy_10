@@ -80,10 +80,10 @@ class ProductosTienda{
                 producto.setPrecioProducto = objeto.precioProducto;
                 this.#listaProductos.push(producto);
             });
-        }else {
-            console.log(`ERROR. el archivo datos.json no contiene datos\n` .bgGreen);
+
         }
         console.log(`Total de productos cargados ==> `.bgBlue + ` ${contador} ` .bgRed);
+        console.log(`                              \n` .bgGreen);
     } 
 
     grabaArchivoProductos(){
