@@ -1,7 +1,7 @@
 require('colors');
 const fs = require('fs');
 
-const datosArchivo = require('./datos.json');
+const datosArchivo = require('./datos.json');//Se carga el contenido del archivo datos.json en la variable datosArchivo
 //const { Console } = require('console');
 
 const main = async() =>{
@@ -10,7 +10,7 @@ const main = async() =>{
     console.log('**   PROYECTO CLASES    **');
     console.log('**************************\n');
     
-    class Producto {
+    class Producto {//Se define una clase llamada Producto con sus propiedades
         #codigoProducto;
         #nombreProducto;
         #inventarioProducto;
@@ -68,7 +68,7 @@ class ProductosTienda{
         return this.#listaProductos;
     }
 
-    cargaArchivoProductos(){
+    cargaArchivoProductos(){//Este método carga productos desde datosArchivo y crea instancias de la clase Producto para cada entrada. Luego, estos productos se agregan a #listaProductos
         let contador = 0;
         if(datosArchivo.length > 0){
             datosArchivo.forEach(objeto => {
@@ -86,7 +86,7 @@ class ProductosTienda{
         console.log(`                              \n` .bgGreen);
     } 
 
-    grabaArchivoProductos(){
+    grabaArchivoProductos(){//convierte la lista de productos a un formato JSON y lo guarda en el archivo datos.json.
         const instanciaClaseAObjetos = this.getListaProductos.map(producto => {
             return {
                 codigoProducto: producto.getCodigoProducto,
@@ -113,7 +113,8 @@ class ProductosTienda{
         })
     }
       
-}
+}   
+    // instancia de ProductosTienda y se ejecutan los métodos necesarios para cargar, mostrar, actualizar inventarios, mostrar nuevamente y grabar en el archivo.
 
     let productosTienda = new ProductosTienda;
 
